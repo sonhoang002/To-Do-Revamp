@@ -1,36 +1,26 @@
-import projectConstructor from "../object-related/project-constructor";
-
 class ProjectList {
     constructor() {
         this.projectContainer = document.querySelector(".project-container");
     }
 
     addProject(projectName) {
-        const newProjectDiv = document.createElement("div");
+        const projectDiv = document.createElement("div");
+        projectDiv.classList.add("new-project-div", projectName);
+        projectDiv.textContent = projectName;
+
         const removeBtn = document.createElement("button");
-        
-        newProjectDiv.classList.add("new-project-div", projectName);
-        newProjectDiv.textContent = projectName;
-
         removeBtn.classList.add("remove-btn");
-        newProjectDiv.appendChild(removeBtn);
-        this.projectContainer.appendChild(newProjectDiv);
 
-        this.removeProject(newProjectDiv, removeBtn);
+        projectDiv.appendChild(removeBtn);
+        this.projectContainer.appendChild(projectDiv);
 
-        // Testing
-        return newProjectDiv;
+        return {projectDiv, removeBtn}
     }
 
-    removeProject(projectDiv, removeBtn) {
-        removeBtn.addEventListener("click", () => {
-            this.projectContainer.removeChild(projectDiv);
-            projectConstructor.remove(projectDiv.textContent);
-        });
+    removeProject(projectDiv) {
+        this.projectContainer.removeChild(projectDiv);
     }
 }
 
-const projectList = new ProjectList();
-
-export default projectList;
+export default ProjectList;
 
