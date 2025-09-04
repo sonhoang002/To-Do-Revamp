@@ -1,0 +1,46 @@
+body {
+    padding: 0;
+    margin: 0;
+
+    font-size: clamp(1rem, 3vw, 5rem);
+}
+
+.outer-most-container {
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+}
+
+.action-container {
+    margin: 0;
+    padding: 0;
+    outline: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.project-header { 
+    display: flex;
+    justify-content: space-between;
+    outline: auto;
+}
+
+.add-project-btn {
+    background-color: none;
+    background-image: url("../css/icon/plus.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 10%;
+    border: none;
+}
+
+.add-project-btn:hover {
+    cursor: pointer;
+}
+
+.project-container {
+    flex: auto;
+}

@@ -1,0 +1,20 @@
+.new-project-div {
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-project-div:hover {
+    cursor: pointer;
+}
+
+.new-project-div:focus {
+    background-color: rebeccapurple;
+}
+
+.remove-btn {
+    height: 20px;
+    width: 30px;
+    margin-right: 5px;
+}

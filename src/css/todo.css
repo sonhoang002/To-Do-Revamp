@@ -1,0 +1,20 @@
+.project-todo-container {
+    display: grid;
+    grid-template: 250px 1fr / 1fr;
+}
+
+.upper-div {
+    outline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lower-div {
+
+}
+
+.create-todo-btn {
+    height: 100px;
+    width: 100px;
+}
