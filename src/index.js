@@ -2,7 +2,7 @@ import "./css/general-layout.css";
 import "./css/add-project-and-todo.css";
 import "./css/project.css";
 import "./css/todo.css";
-import toDoCreation from "./object-related/todo-constructor.js";
+// import toDoCreation from "./object-related/todo/todo-constructor.js";
 import projectConstructor from "./object-related/project/project-constructor.js";
 import AddingProject from "./object-related/function/adding-btn.js";
 

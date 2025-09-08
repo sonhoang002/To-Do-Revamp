@@ -11,4 +11,10 @@ export default class ProjectService {
         const project = TAPManagement.getProjectObject(name);
         TAPManagement.removeProject(project);
     }
+
+    checkProject(name) {
+        if (TAPManagement.getProjectObject(name)) {
+            return true;
+        }
+    }
 }

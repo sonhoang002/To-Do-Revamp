@@ -1,5 +1,5 @@
 import projectConstructor from "../project/project-constructor";
-import AddingProjectBtn from "../../DOM-related/adding-project-btn";
+import AddingProjectBtn from "../../DOM-related/project/adding-project-btn";
 
 export default class FormSubmit {
     constructor(projectForm, formContainer) {
@@ -13,9 +13,7 @@ export default class FormSubmit {
             e.preventDefault();
 
             const textInput = document.querySelector(".text-input");
-            projectConstructor.create({
-                name : textInput.value
-            })
+            projectConstructor.create(textInput.value)
 
             this.addingProjectBtn.deactivateForm();
         })

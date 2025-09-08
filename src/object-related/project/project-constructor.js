@@ -1,12 +1,6 @@
-import Project from "./project.js";
-import TAPManagement from "../todo-and-project-management.js";
-import ProjectList from "../../DOM-related/project-list-creation.js";
-
-// Testing
-import ProjectBtnFunction from "./project-btn-function.js";
+import ProjectList from "../../DOM-related/project/project-list-creation.js"
 import ProjectService from "./project-service.js";
 import ProjectUIController from "./project-ui-controller.js";
-
 
 class ProjectConstructor{
     constructor() {

@@ -6,6 +6,7 @@ class ProjectList {
     addProject(projectName) {
         const projectDiv = document.createElement("div");
         projectDiv.classList.add("new-project-div", projectName);
+
         projectDiv.textContent = projectName;
 
         const removeBtn = document.createElement("button");

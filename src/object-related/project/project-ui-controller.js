@@ -7,10 +7,15 @@ export default class ProjectUIController {
     }
 
     addProject(name) {
-        this.service.addProject(name);
+        if (this.service.checkProject(name)) {
+            alert("Already Exist");
+            return;
+        }
+        this.service.addProject(name)
         const {projectDiv, removeBtn} = this.list.addProject(name);
 
-        removeBtn.addEventListener("click", () => {
+        removeBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
             this.service.removeProject(name);
             this.list.removeProject(projectDiv);
         });
