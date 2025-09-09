@@ -27,6 +27,10 @@ class ToDoAndProjectManagement {
     getProjectObject(projectName) {
         return [...this.saveProject.values()].find(project => project.title === projectName);
     }
+
+    testingPurpose() {
+        return this.saveToDo;
+    }
 }
 
 const TAPManagement = new ToDoAndProjectManagement();

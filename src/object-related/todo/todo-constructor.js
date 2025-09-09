@@ -11,10 +11,6 @@ class ToDoConstructor {
         this.controller = new todoUIController(list, service, todoStorage);
     }
 
-    // create({container, title, description, dueDate, priority}) {
-    //     this.controller.addTodo(container, title, description, dueDate, priority);
-    // }
-
     recallOrRender(projectDiv, projectTodoContainer) {
         this.controller.recall(projectDiv.textContent, projectTodoContainer);
     }

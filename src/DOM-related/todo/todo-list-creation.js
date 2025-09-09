@@ -4,8 +4,6 @@ class TodoList {
     }
 
     addTodo(container, todoName) {
-        console.log(container);
-        console.log(todoName);
         const newTodo = document.createElement("div");
         newTodo.textContent = todoName;
 
@@ -14,15 +12,26 @@ class TodoList {
         return newTodo;
     }
 
-    recallTodo(containerName, projectTodoContainer) {
+    // Already todo inside the project, that when you recall
+    recallTodo(projectName, projectTodoContainer, storageValue) {
+        while (projectTodoContainer.lastChild.firstChild) {
+            projectTodoContainer.lastChild.removeChild(projectTodoContainer.lastChild.firstChild);
+        }
+        const lowerDiv = projectTodoContainer.lastChild;
+        for (let i = 0; i < storageValue.length; i ++) {
+            const newDiv = document.createElement("div");
+            newDiv.textContent = storageValue[i].title;
+
+            lowerDiv.appendChild(newDiv);
+        }
         
     }
 
+    // The project is empty
     renderTodo(projectTodoContainer) {
         while (projectTodoContainer.firstChild) {
             projectTodoContainer.removeChild(projectTodoContainer.firstChild);
         }
-        console.log("here");
         const upperDiv = document.createElement("div");
         upperDiv.classList.add("upper-div");
         const lowerDiv = document.createElement("div");

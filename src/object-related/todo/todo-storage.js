@@ -12,12 +12,20 @@ export default class TodoStorage {
         this.storage.get(projectName).push(toDoObject);
     }
 
-    getStore(projectName) {
+    getStoreName(projectName) {
         return [...this.storage.keys()].find(item => item === projectName);
+    }
+
+    getStoreValue(projectName) {
+        return this.storage.get(projectName);
     }
 
     removeItem(projectName) {
         const removeItem = [...this.storage.keys()].find(item => item === projectName);
         this.storage.delete(removeItem);
+    }
+
+    getGetStore() {
+        return this.storage;
     }
 }

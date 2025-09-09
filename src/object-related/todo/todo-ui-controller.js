@@ -10,19 +10,20 @@ export default class todoUIController {
     addTodo(projectName, container, name, description, dueDate, priority) {
         const newTodo = this.service.addTodo(name, description, dueDate, priority);
         const todoDiv = this.list.addTodo(container, name);
-        console.log("here");
 
-        if (this.storage.getStore(projectName) === undefined) {
+        if (this.storage.getStoreName(projectName) === undefined) {
             this.storage.store(projectName);
         }
         this.storage.addTodoToStorage(projectName, newTodo);
     }
 
     recall(projectName, projectTodoContainer) {
-        if (this.storage.getStore(projectName) === undefined) {
+        if (this.storage.getStoreName(projectName) === undefined) {
             this.render(projectName, projectTodoContainer);
+        } else {
+            const storageValue = this.storage.getStoreValue(projectName);
+            this.list.recallTodo(projectName, projectTodoContainer, storageValue);
         }
-        this.list.recallTodo(projectName, projectTodoContainer);
     }
 
     render(projectName, projectTodoContainer) {
