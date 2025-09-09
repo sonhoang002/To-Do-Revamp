@@ -1,8 +1,4 @@
 class TodoList {
-    constructor() {
-
-    }
-
     addTodo(container, todoName) {
         const newTodo = document.createElement("div");
         newTodo.textContent = todoName;

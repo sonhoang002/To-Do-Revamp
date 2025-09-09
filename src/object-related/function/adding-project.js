@@ -1,5 +1,5 @@
 import AddingProjectBtn from "../../DOM-related/project/adding-project-btn";
-import FormSubmit from "./form-submit";
+import FormSubmit from "./form-submit-project";
 
 export default class AddingProject {
     constructor(projectForm, formContainer, addingBtn) {
@@ -19,7 +19,7 @@ export default class AddingProject {
             }
         })
 
-        const formSubmit = new FormSubmit(this.projectForm, this.formContainer);
+        const formSubmit = new FormSubmit(this.projectForm, this.formContainer, this.addingProjectBtn);
         formSubmit.addFormSubmitLogic();
     }
 }

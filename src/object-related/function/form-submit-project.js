@@ -1,11 +1,11 @@
 import projectConstructor from "../project/project-constructor";
-import AddingProjectBtn from "../../DOM-related/project/adding-project-btn";
+// import AddingProjectBtn from "../../DOM-related/project/adding-project-btn";
 
 export default class FormSubmit {
-    constructor(projectForm, formContainer) {
+    constructor(projectForm, formContainer, addingProjectBtn) {
         this.projectForm = projectForm;
         this.formContainer = formContainer;
-        this.addingProjectBtn = new AddingProjectBtn(formContainer);
+        this.addingProjectBtn = addingProjectBtn;
     }
 
     addFormSubmitLogic() {
