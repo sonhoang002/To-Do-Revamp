@@ -29,8 +29,21 @@
 
         <div class="todo-form-container inactive">
             <form action="" class="todo-form">
-                <div class="todo-name">Todo Name:</div>
+                <div class="todo-name">Todo Name: </div>
                 <input class="text-input-todo" type="text" autofocus>
+
+                <div class="todo-description">Description: </div>
+                <input class="text-description-todo" type="text">
+
+                <div class="todo-duedate">Due Date: </div>
+                <input class="todo-date" type="date">
+
+                <select id="todo-priority">
+                    <option value="">-- Priority --</option>
+                    <option value="1">Low</option>
+                    <option value="2">Medium</option>
+                    <option value="3">High</option>
+                </select>
 
                 <button class="submit-btn-todo" type="submit">Create</button>
             </form>

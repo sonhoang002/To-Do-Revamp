@@ -14,7 +14,6 @@ export default class FormSubmit {
 
             const textInput = document.querySelector(".text-input");
             projectConstructor.create(textInput.value);
-
             this.addingProjectBtn.deactivateForm();
         })
     }

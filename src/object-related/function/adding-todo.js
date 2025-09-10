@@ -9,18 +9,16 @@ export default class AddingTodo {
         this.addingTodoBtn = new AddingTodoBtn(this.formContainer);
     }
 
-    clickFunction() {
-        console.log("here");
-        this.addingBtn.addEventListener("click", () => {
-            this.addingTodoBtn.activateForm();
-        });
+    clickFunction(createCallBack) {
+        this.addingTodoBtn.activateForm();
+
         this.formContainer.addEventListener("click", (e) => {
             if (e.target === this.formContainer) {
                 this.addingTodoBtn.deactivateForm();
             }
         })
 
-        const formSubmit = new FormSubmitTodo(this.todoForm, this.formContainer, this.addingTodoBtn);
-        formSubmit.addFormSubmitLogic();
+        const formSubmitTodo = new FormSubmitTodo(this.todoForm, this.formContainer, this.addingTodoBtn);
+        formSubmitTodo.addFormSubmitLogic(createCallBack);
     }
 }

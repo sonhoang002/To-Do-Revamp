@@ -9,19 +9,17 @@ export default class CreateTodoButton {
 
     addFunction(projectName, lowerDiv, createCallBack) {
         this.createBtn.addEventListener("click", () => {
-            console.log("addFunction");
             const addingTodo = new AddingTodo(this.createBtn);
-            addingTodo.clickFunction();
-
-            // createCallBack({
-            //     projectName,
-            //     lowerDiv,
-            //     title: "hello",
-            //     description: "something",
-            //     dueDate: "01/12/2024",
-            //     priority: "high",
-            // });
-            // console.log(projectName);
+            addingTodo.clickFunction(({ title, description, dueDate, priority }) => {
+                createCallBack({
+                    projectName,
+                    lowerDiv,
+                    title: title,
+                    description: description,
+                    dueDate: dueDate,
+                    priority: priority,
+                });
+            });
         });
     }
 }

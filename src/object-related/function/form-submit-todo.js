@@ -5,14 +5,25 @@ export default class FormSubmitTodo {
         this.addingTodoBtn = addingTodoBtn
     }
 
-    addFormSubmitLogic() {
+    addFormSubmitLogic(createCallBack) {
         this.todoForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            const textInput = document.querySelector(".text-input");
-            projectConstructor.create(textInput.value);
+            const textInputTodo = document.querySelector(".text-input-todo");
+            const todoDescription = document.querySelector(".text-description-todo");
+            const todoDate = document.querySelector(".todo-date");
+            const todoPriority = document.querySelector("#todo-priority");
+
+            const data = {
+                title: textInputTodo.value,
+                description: todoDescription.value,
+                dueDate: todoDate.value,
+                priority: todoPriority.value
+            };
 
             this.addingTodoBtn.deactivateForm();
+
+            createCallBack(data);
         })
     }
 }
