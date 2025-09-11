@@ -1,4 +1,4 @@
-import AddingTodoBtn from "../../DOM-related/todo/adding-todo-btn";
+import AddingTodoBtn from "../../../DOM-related/todo/adding-todo-btn";
 import FormSubmitTodo from "./form-submit-todo";
 
 export default class AddingTodo {
@@ -7,6 +7,8 @@ export default class AddingTodo {
         this.formContainer = document.querySelector(".todo-form-container");
         this.addingBtn = addingBtn;
         this.addingTodoBtn = new AddingTodoBtn(this.formContainer);
+
+        this.formSubmitTodo = new FormSubmitTodo(this.todoForm, this.formContainer, this.addingTodoBtn);
     }
 
     clickFunction(createCallBack) {
@@ -18,7 +20,6 @@ export default class AddingTodo {
             }
         })
 
-        const formSubmitTodo = new FormSubmitTodo(this.todoForm, this.formContainer, this.addingTodoBtn);
-        formSubmitTodo.addFormSubmitLogic(createCallBack);
+        this.formSubmitTodo.addFormSubmitLogic(createCallBack);
     }
 }

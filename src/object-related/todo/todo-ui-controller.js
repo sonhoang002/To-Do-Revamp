@@ -9,7 +9,7 @@ export default class todoUIController {
 
     addTodo(projectName, container, name, description, dueDate, priority) {
         const newTodo = this.service.addTodo(name, description, dueDate, priority);
-        const todoDiv = this.list.addTodo(container, name);
+        const todoDiv = this.list.addTodo(container, name, dueDate, priority);
 
         if (this.storage.getStoreName(projectName) === undefined) {
             this.storage.store(projectName);
@@ -22,6 +22,7 @@ export default class todoUIController {
             this.render(projectName, projectTodoContainer);
         } else {
             const storageValue = this.storage.getStoreValue(projectName);
+            this.render(projectName, projectTodoContainer);
             this.list.recallTodo(projectName, projectTodoContainer, storageValue);
         }
     }

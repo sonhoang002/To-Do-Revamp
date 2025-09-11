@@ -1,5 +1,5 @@
-import AddingProjectBtn from "../../DOM-related/project/adding-project-btn";
-import FormSubmit from "./form-submit-project";
+import AddingProjectBtn from "../../../DOM-related/project/adding-project-btn.js";
+import FormSubmit from "./form-submit-project.js"
 
 export default class AddingProject {
     constructor(projectForm, formContainer, addingBtn) {

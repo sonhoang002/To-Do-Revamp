@@ -4,7 +4,7 @@ import "./css/project.css";
 import "./css/todo.css";
 
 import projectConstructor from "./object-related/project/project-constructor.js";
-import AddingProject from "./object-related/function/adding-project.js";
+import AddingProject from "./object-related/function/project/adding-project.js";
 
 const addProjectBtn = document.querySelector(".add-project-btn");
 const projectForm = document.querySelector(".project-form");
