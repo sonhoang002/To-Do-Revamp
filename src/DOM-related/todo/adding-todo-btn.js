@@ -7,14 +7,14 @@ export default class AddingTodoBtn {
         this.todoPriority = document.querySelector("#todo-priority");
     }
 
-    activateForm() {
+    activateTodoForm() {
         this.formContainer.classList.remove("inactive");
         setTimeout(() => {
             this.textInput.focus();
         }, 0);
     }
 
-    deactivateForm() {
+    deactivateTodoForm() {
         this.formContainer.classList.add("inactive");
         this.textInput.value = "";
         this.todoDescription.value = "";

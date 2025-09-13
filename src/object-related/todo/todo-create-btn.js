@@ -1,4 +1,3 @@
-import createElement from "../function/create";
 import AddingTodo from "../function/todo/adding-todo";
 
 export default class CreateTodoButton {
@@ -19,7 +18,6 @@ export default class CreateTodoButton {
                     dueDate: dueDate,
                     priority: priority,
                 });
-                console.log(projectName)
             });
         });
     }

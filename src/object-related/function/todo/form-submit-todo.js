@@ -24,7 +24,7 @@ export default class FormSubmitTodo {
                 priority: todoPriority.value
             };
 
-            this.addingTodoBtn.deactivateForm();
+            this.addingTodoBtn.deactivateTodoForm();
 
             createCallBack(data);
         })

@@ -1,4 +1,5 @@
 import createElement from "../../object-related/function/create";
+import showDetail from "../../object-related/function/todo/show-todo-detail";
 
 class TodoList {
     addTodo(container, name, dueDate, priority) {
@@ -23,7 +24,7 @@ class TodoList {
     }
 
     // Already todo inside the project, that when you recall
-    recallTodo(projectName, projectTodoContainer, storageValue) {
+    recallTodo(projectTodoContainer, storageValue) {
         while (projectTodoContainer.lastChild.firstChild) {
             projectTodoContainer.lastChild.removeChild(projectTodoContainer.lastChild.firstChild);
         }
@@ -45,8 +46,7 @@ class TodoList {
 
             newTodo.append(todoName, todoDueDate);
 
-            // const newDiv = document.createElement("div");
-            // newDiv.textContent = storageValue[i].title;
+            showDetail.showTodoDetailLogic(newTodo, storageValue[i].title, storageValue[i].description, storageValue[i].dueDate, storageValue[i].priority)
 
             lowerDiv.appendChild(newTodo);
         }

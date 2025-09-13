@@ -12,11 +12,11 @@ export default class AddingTodo {
     }
 
     clickFunction(createCallBack) {
-        this.addingTodoBtn.activateForm();
+        this.addingTodoBtn.activateTodoForm();
 
         this.formContainer.addEventListener("click", (e) => {
             if (e.target === this.formContainer) {
-                this.addingTodoBtn.deactivateForm();
+                this.addingTodoBtn.deactivateTodoForm();
             }
         })
 

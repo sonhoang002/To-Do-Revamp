@@ -1,4 +1,5 @@
 import CreateTodoButton from "./todo-create-btn";
+import showDetail from "../function/todo/show-todo-detail";
 
 export default class todoUIController {
     constructor(todoList, todoService, todoStorage) {
@@ -10,6 +11,8 @@ export default class todoUIController {
     addTodo(projectName, container, name, description, dueDate, priority) {
         const newTodo = this.service.addTodo(name, description, dueDate, priority);
         const todoDiv = this.list.addTodo(container, name, dueDate, priority);
+
+        showDetail.showTodoDetailLogic(todoDiv, name, description, dueDate, priority);
 
         if (this.storage.getStoreName(projectName) === undefined) {
             this.storage.store(projectName);
@@ -23,7 +26,7 @@ export default class todoUIController {
         } else {
             const storageValue = this.storage.getStoreValue(projectName);
             this.render(projectName, projectTodoContainer);
-            this.list.recallTodo(projectName, projectTodoContainer, storageValue);
+            this.list.recallTodo(projectTodoContainer, storageValue);
         }
     }
 
